@@ -1,5 +1,5 @@
 /bin
 /obj
-/Resources
-/Properties
-/Platforms
+Resources/
+Properties/
+Platforms/
