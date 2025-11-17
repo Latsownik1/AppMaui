@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using Produkty;
+using Produkty.Data;
 
 namespace Produkty;
 
@@ -18,6 +20,12 @@ public static class MauiProgram
 #if DEBUG
         builder.Logging.AddDebug();
 #endif
+
+        // 🔹 Ścieżka do lokalnej bazy danych (plik będzie w AppDataDirectory)
+        string dbPath = Path.Combine(FileSystem.AppDataDirectory, "produkty.db3");
+
+        // 🔹 Rejestrujemy bazę w DI (Dependency Injection)
+        builder.Services.AddSingleton(new ProductDatabase(dbPath));
 
         return builder.Build();
     }
