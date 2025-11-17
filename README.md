@@ -45,7 +45,7 @@ bash
 dotnet workload install maui
 
 
-Platforma:
+## Platforma:
 
 Windows
 
@@ -53,7 +53,7 @@ macOS
 
 Android (emulator)
 
-📥 Instalacja i uruchomienie
+## 📥 Instalacja i uruchomienie
 1️⃣ Pobierz projekt
 git clone https://github.com/Latsownik1/AppMaui.git
 
@@ -73,7 +73,7 @@ Aplikacja automatycznie utworzy lokalną bazę danych:
 
 FileSystem.AppDataDirectory/produkty.db3
 
-💾 Przechowywanie danych
+## 💾 Przechowywanie danych
 🔹 Baza SQLite
 
 Plik:
