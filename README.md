@@ -1,28 +1,95 @@
-# Produkty - Aplikacja do zarządzania produktami
+# 📦 Produkty – Aplikacja .NET MAUI z SQLite
 
-Prosta aplikacja napisana w **.NET MAUI**, służąca do zarządzania produktami. Umożliwia dodawanie, edytowanie, usuwanie oraz zapisywanie produktów do pliku CSV.
+Aplikacja służy do zarządzania produktami. Umożliwia dodawanie, edytowanie, usuwanie oraz zapisywanie danych do pliku CSV.  
+Dane przechowywane są w **lokalnej bazie SQLite**, tworzonej automatycznie przy pierwszym uruchomieniu aplikacji.
 
-## Funkcje
-- Wyświetlanie listy produktów
-- Dodawanie nowego produktu (nazwa, cena, ilość)
-- Edycja istniejącego produktu
-- Usuwanie produktu
-- Zapis danych do pliku CSV
-- Wczytywanie danych z pliku CSV przy uruchomieniu aplikacji
-- Informacja o liczbie produktów
+---
 
-## Struktura projektu
-- `MainPage.xaml` - UI aplikacji
-- `MainPage.xaml.cs` - logika aplikacji
-- `Product.cs` - klasa reprezentująca produkt
-- `produkty.csv` - plik CSV przechowujący dane produktów (tworzony automatycznie w katalogu aplikacji)
+## 🚀 Funkcjonalność
 
-## Wymagania
-- [.NET MAUI](https://learn.microsoft.com/en-us/dotnet/maui/what-is-maui)
-- Visual Studio 2022 lub nowsze z obsługą .NET MAUI
-- System Windows lub macOS
+- 📋 Wyświetlanie listy produktów z bazy SQLite  
+- ➕ Dodawanie nowego produktu (nazwa, cena, ilość)  
+- ✏️ Edycja istniejącego produktu  
+- 🗑️ Usuwanie produktu  
+- 💾 Eksport danych do pliku **CSV**  
+- 🔢 Wyświetlanie liczby produktów  
+- 🗃️ Automatyczne tworzenie bazy SQLite i tabeli `Product`
 
-## Instalacja i uruchomienie
-1. Sklonuj repozytorium:
-   ```bash
-   git clone https://github.com/TWOJE-NAZWISKO/produkty.git
+---
+
+## 🗂️ Struktura projektu
+
+Produkty/
+│
+├── MainPage.xaml → UI aplikacji
+├── MainPage.xaml.cs → logika aplikacji (CRUD, CSV)
+├── Product.cs → model danych
+│
+├── Data/
+│ └── ProductDatabase.cs → obsługa bazy SQLite
+│
+├── MauiProgram.cs → konfiguracja MAUI + rejestracja SQLite
+├── produkty.db3 → baza SQLite tworzona automatycznie
+└── produkty.csv → eksport CSV tworzony ręcznie
+
+
+---
+
+## 🧰 Wymagania
+
+- Visual Studio 2022 (z obsługą **.NET MAUI**)  
+- .NET SDK 7 lub 8  
+- Workload MAUI:
+
+bash
+dotnet workload install maui
+
+
+Platforma:
+
+Windows
+
+macOS
+
+Android (emulator)
+
+📥 Instalacja i uruchomienie
+1️⃣ Pobierz projekt
+git clone https://github.com/Latsownik1/AppMaui.git
+
+2️⃣ Otwórz rozwiązanie
+
+Otwórz w Visual Studio:
+
+Produkty.sln
+
+3️⃣ Uruchom aplikację
+
+Wybierz platformę (Windows Machine / Android Emulator)
+
+Kliknij Run
+
+Aplikacja automatycznie utworzy lokalną bazę danych:
+
+FileSystem.AppDataDirectory/produkty.db3
+
+💾 Przechowywanie danych
+🔹 Baza SQLite
+
+Plik:
+
+produkty.db3
+
+
+Tworzy się automatycznie w:
+
+FileSystem.AppDataDirectory
+
+🔹 Eksport CSV
+
+Po kliknięciu „Zapisz CSV” powstaje:
+
+produkty.csv
+
+
+również w AppDataDirectory.
